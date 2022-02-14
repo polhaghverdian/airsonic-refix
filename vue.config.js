@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: '/airsonic/',
+    publicPath: '/$BASE_URL/',
     devServer: {
         disableHostCheck: true,
         overlay: {

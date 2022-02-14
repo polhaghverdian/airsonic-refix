@@ -4,7 +4,7 @@ MAINTAINER Pol Haghverdian <pol_r@hotmail.com>
 ENV ALPINE_MIRROR "http://dl-cdn.alpinelinux.org/alpine"
 RUN echo "${ALPINE_MIRROR}/edge/main" >> /etc/apk/repositories
 
-ENV BASE_URL=/airsonic
+ENV BASE_URL=/
 ENV SERVER_URL=
 
 # Disable Prompt During Packages Installation
@@ -14,10 +14,13 @@ RUN apk add --no-cache nodejs yarn --repository="http://dl-cdn.alpinelinux.org/a
 
 EXPOSE 80
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY env.js.template /env.js.template
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY vue.config.js /vue.config.js
 RUN chmod +x /docker-entrypoint.sh
+RUN mkdir -p /etc/nginx/templates
+COPY default.conf.template /etc/nginx/templates/default.conf.template
 
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
+# CMD exec nginx -g 'daemon off;' && ./start-up.sh

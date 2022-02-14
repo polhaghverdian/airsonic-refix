@@ -6,9 +6,9 @@ services:
     hostname: portainer
     image: airsonic-refix
     restart: always
-#    environment:
-#      - BASE_URL=/airsonic
-#      - SERVER_URL=https://bajskorv.com
+    environment:
+      - BASE_URL=airsonic
+      #- SERVER_URL=https://bajskorv.com
     ports:
       - 80:80
 #    volumes:
