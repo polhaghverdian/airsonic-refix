@@ -11,7 +11,7 @@ server {
   index   index.html;
 
   location /${BASE_URL} {
-    rewrite  ^/airsonic/(.*) /$1 break; 
+    rewrite  ^/${BASE_URL}/(.*) /$1 break; 
     try_files $uri @airsonic;
   }
 

@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: '/$BASE_URL/',
+    publicPath: '/$BASE_URL',
     devServer: {
         disableHostCheck: true,
         overlay: {

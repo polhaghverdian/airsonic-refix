@@ -4,7 +4,7 @@ MAINTAINER Pol Haghverdian <pol_r@hotmail.com>
 ENV ALPINE_MIRROR "http://dl-cdn.alpinelinux.org/alpine"
 RUN echo "${ALPINE_MIRROR}/edge/main" >> /etc/apk/repositories
 
-ENV BASE_URL=/
+ENV BASE_URL=
 ENV SERVER_URL=
 
 # Disable Prompt During Packages Installation
