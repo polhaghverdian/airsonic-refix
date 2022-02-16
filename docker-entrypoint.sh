@@ -42,7 +42,6 @@ fi
 echo -------------------------- Cloning Airsonic-refix repo --------------------------------
 git clone https://github.com/tamland/airsonic-refix.git && cd /airsonic-refix
 envsubst < /vue.config.js > /airsonic-refix/vue.config.js
-# cp /vue.config.js /airsonic-refix/vue.config.js
 
 echo Building...
 yarn install
@@ -62,10 +61,8 @@ else
 fi
 
 echo cleaning up...
-# rm -rf /airsonic-refix
+rm -rf /airsonic-refix
 
 echo -------------------------- Starting Airsonic-refix -------------------------
-#sleep infinity
-
 
 exec "$@"
