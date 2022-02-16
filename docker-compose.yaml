@@ -3,14 +3,13 @@ version: '3.3'
 services:
   portainer:
     container_name: airsonic-refix
-    hostname: portainer
+    hostname: airsonic
     image: airsonic-refix
     restart: always
     environment:
       - BASE_URL=airsonic
-      #- SERVER_URL=https://bajskorv.com
+      #- SERVER_URL=https://example.com
     ports:
       - 80:80
 #    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
 #      - ./data:/data
